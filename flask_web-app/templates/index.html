@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup ML Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Startup Profit Predictor</h1>
+        <form id="predict-form" method="POST" action="/predict">
+            <label for="rd-spend">R&D Spend:</label>
+            <input type="text" id="rd-spend" name="rd-spend" required>
+            <label for="admin-spend">Admin Spend:</label>
+            <input type="text" id="admin-spend" name="admin-spend" required>
+            <label for="marketing-spend">Marketing Spend:</label>
+            <input type="text" id="marketing-spend" name="marketing-spend" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+            <button type="submit" id="predict-button">Predict Profit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
